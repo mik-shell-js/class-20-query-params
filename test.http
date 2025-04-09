@@ -6,6 +6,15 @@
 # @name produce
 GET /api/produce
 ###
+GET /api/produce?country=USA&category=fruit
+###
+GET /api/produce?category=vegetable
+###
+GET /api/produce?country={{"Costa Rica"}}
+###
+# @ref produce
+GET /api/produce?country={{produce[4].country}}
+###
 # @ref produce
 # @name product
 GET /api/produce/{{produce[produce.length - 1]._id}}

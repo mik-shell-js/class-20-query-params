@@ -22,8 +22,19 @@ const conn = await client.connect();
 const db = conn.db('app');
 
 app.get('/api/produce', async (req, res) => {
+  const categoryName = req.query.category
+  const countryName = req.query.country
+
+  let filter = {}
+  if (categoryName) {
+    filter.category = categoryName;
+  }
+  if (countryName) {
+    filter.country = countryName;
+  }
+
   const produce = await db.collection('produce')
-    .find()
+    .find(filter)
     .toArray();
   res.status(200).json(produce);
 });
