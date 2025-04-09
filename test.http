@@ -1,0 +1,11 @@
+/*
+# Test the Server API
+*/
+@host http://localhost:8080
+###
+# @name produce
+GET /api/produce
+###
+# @ref produce
+# @name product
+GET /api/produce/{{produce[produce.length - 1]._id}}

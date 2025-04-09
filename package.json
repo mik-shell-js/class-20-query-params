@@ -1,0 +1,14 @@
+{
+  "name": "info2310-class20",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -n \"client,server\" -c \"blue.bold,green.bold\" \"npm run dev --workspace=client\" \"npm run dev --workspace=server\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
